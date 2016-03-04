@@ -13,6 +13,11 @@
   <tile id="145" terrain="0,0,0,0"/>
   <tile id="160" terrain="0,0,0,0"/>
   <tile id="161" terrain="0,0,0,0"/>
+  <tile id="214">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="20" height="20">
   <data encoding="csv">

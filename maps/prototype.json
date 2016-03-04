@@ -40,6 +40,13 @@
                 }],
          "tilecount":336,
          "tileheight":16,
+         "tileproperties":
+            {
+             "214":
+                {
+                 "passable":"false"
+                }
+            },
          "tiles":
             {
              "112":
