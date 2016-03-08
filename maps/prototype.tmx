@@ -18,6 +18,11 @@
     <property name="passable" value="false"/>
    </properties>
   </tile>
+  <tile id="230">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="20" height="20">
   <data encoding="csv">
