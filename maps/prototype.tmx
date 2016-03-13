@@ -18,7 +18,37 @@
     <property name="passable" value="false"/>
    </properties>
   </tile>
+  <tile id="215">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="216">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
   <tile id="230">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="232">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="246">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="247">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="248">
    <properties>
     <property name="passable" value="false"/>
    </properties>
