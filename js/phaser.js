@@ -93485,7 +93485,6 @@ Phaser.Tileset.prototype = {
 
         this.image = image;
         this.updateTileData(image.width, image.height);
-       
     },
 
     /**
@@ -93534,7 +93533,12 @@ Phaser.Tileset.prototype = {
 
         if ((this.rows && this.rows !== rowCount) || (this.columns && this.columns !== colCount))
         {
-            console.warn("Phaser.Tileset - actual and expected number of tile rows and columns differ");
+            console.warn("Phaser.Tileset - actual and expected number of tile rows and columns differ; expected ", this.rows, " but got ", rowCount, " rows and expected ", this.columns, " but got ", colCount, " columns");
+        }
+
+        if (rowCount == 0 || colCount == 0) {
+            rowCount = this.rows;
+            colCount = this.columns;
         }
 
         this.rows = rowCount;
