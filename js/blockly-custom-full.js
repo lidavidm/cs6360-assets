@@ -28642,10 +28642,6 @@ Blockly.Connection.prototype.checkType_ = function(otherConnection) {
   // If they require a method, we --must-- be a method, and vice versa
   if (weAreMethod) return theyAreMethod;
   if (theyAreMethod) return weAreMethod;
-  if (!this.check_ || !otherConnection.check_) {
-    // One or both sides are promiscuous enough that anything will fit.
-    return true;
-  }
   // Find any intersection in the check lists.
   for (var i = 0; i < this.check_.length; i++) {
     if (otherConnection.check_.indexOf(this.check_[i]) != -1) {
