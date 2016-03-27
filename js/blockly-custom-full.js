@@ -28634,14 +28634,17 @@ Blockly.Connection.prototype.checkType_ = function(otherConnection) {
     return false;
   }
 
-  var weAreMethod = (this.check_ && this.check_.length > 0 &&
-                     this.check_[0] === "method");
-  var theyAreMethod = (otherConnection.check_ &&
-                       otherConnection.check_.length > 0 &&
-                       otherConnection.check_[0] === "method");
-  // If they require a method, we --must-- be a method, and vice versa
-  if (weAreMethod) return theyAreMethod;
-  if (theyAreMethod) return weAreMethod;
+  // var weAreMethod = (this.check_ && this.check_.length > 0 &&
+  //                    this.check_[0] === "method");
+  // var theyAreMethod = (otherConnection.check_ &&
+  //                      otherConnection.check_.length > 0 &&
+  //                      otherConnection.check_[0] === "method");
+  // // If they require a method, we --must-- be a method, and vice versa
+  // if (weAreMethod) return theyAreMethod;
+  // if (theyAreMethod) return weAreMethod;
+  // If either of us have a constraint, we both must have a constraint
+  if (!this.check_ && !otherConnection.check_) return true;
+  if (!this.check_ || !otherConnection.check_) return false;
   // Find any intersection in the check lists.
   for (var i = 0; i < this.check_.length; i++) {
     if (otherConnection.check_.indexOf(this.check_[i]) != -1) {
