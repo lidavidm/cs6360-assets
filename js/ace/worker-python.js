@@ -2441,7 +2441,6 @@ oop.inherits(PythonWorker, Mirror);
         console.log("onUpdate");
         var value = this.doc.getValue();
         value = value.replace(/^#!.*\n/, "\n");
-        console.log(value);
         if (!value)
             return this.sender.emit("annotate", []);
 
@@ -2450,6 +2449,7 @@ oop.inherits(PythonWorker, Mirror);
             Sk.importMainWithBody("<validate>", false, value, false);
         }
         catch (e) {
+            console.log(e);
             var err = e.args.v[3];
             var location = err[0];
             errors.push({
