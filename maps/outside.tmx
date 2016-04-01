@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="23" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="cave2" tilewidth="16" tileheight="16">
+  <image source="../tilesets/cave2.png" width="256" height="368"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="23">
+  <data encoding="base64" compression="zlib">
+   eJztzrEKwkAQhOETNabSQg3EImmioIUSovYq5v3JqwjW/gfjC9xtE7iBj02WY5mFc26JVcCcYY5MuxwlKtQBc4MtCu12OOKMS8BssMdBu5P6WeXfzyqpX1xSv7ikfnEZQ7+v4b0PsondvSm3CgzOxppbV3R44K1/P1/6vqHHE3fptG/1ttVb7wfKDyBS
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="20" height="23">
+  <data encoding="base64" compression="zlib">
+   eJzllFEOwkAIBdezmHhfuMFyUmtSknEk+tM/SUjbbRlYeNu1/s/24XVeX56Hx3ktPAfuC2sdb14M3jmaUeCm4tr6HeMT8TXE+/0Wj4wUw8+BGPaBvBCXdU4cetfcVviO9TE/63Bv2ts4X86z1jxf9ow5zXOd7D151lfnJo+6M481kLPXez7XZ571SrbzWS/uG2dgnbGH1MQ3Xg4869Nnhbz9g0cNJWJifdY3nW/rn99Mcy/xfHY9O2uStfl8cA/mugfcs/tBnrVgzfgfM82wbZpHaI18a9XzvdIet+tY94P1BDKPwcE=
+  </data>
+ </layer>
+</map>
