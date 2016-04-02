@@ -2446,7 +2446,10 @@ oop.inherits(PythonWorker, Mirror);
         var lines = value.split("\n").length - 1;
         var errors = [];
         try {
-            Sk.importMainWithBody("<validate>", false, value, false);
+            var body = "if False:\n" + value.split("\n").map(function(line) {
+                return "    " + line;
+            }).join("\n");
+            Sk.importMainWithBody("<validate>", false, body, false);
         }
         catch (e) {
             console.log(e);
@@ -2470,16 +2473,18 @@ oop.inherits(PythonWorker, Mirror);
         }
 
         lines = value.split("\n");
-        for (var i = 3; i < lines.length; i++) {
-            var line = lines[i];
-            if (line.trim() && line[0] != " ") {
-                errors.push({
-                    row: i,
-                    column: 0,
-                    text: "Indent this line!",
-                    type: "error",
-                    raw: "(no raw error)",
-                });
+        if (lines.length > 0 && lines[0].indexOf("This is a method") > -1) {
+            for (var i = 3; i < lines.length; i++) {
+                var line = lines[i];
+                if (line.trim() && line[0] != " ") {
+                    errors.push({
+                        row: i,
+                        column: 0,
+                        text: "Indent this line!",
+                        type: "error",
+                        raw: "(no raw error)",
+                    });
+                }
             }
         }
 
