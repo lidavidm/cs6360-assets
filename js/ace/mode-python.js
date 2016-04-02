@@ -259,7 +259,6 @@ oop.inherits(Mode, TextMode);
     };
 
     this.createWorker = function(session) {
-        console.log("Creating Python worker");
         var worker = new WorkerClient(["ace"], "ace/mode/python_worker", "PythonWorker");
         worker.attachToDocument(session.getDocument());
 
