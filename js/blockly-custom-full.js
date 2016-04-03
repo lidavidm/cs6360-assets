@@ -67162,6 +67162,10 @@ Blockly.Python['variables_get'] = function(block) {
   // Variable getter.
   var code = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'),
       Blockly.Variables.NAME_TYPE);
+  if (code === "super") {
+    // super is a special variable that resolves to super()
+    return ["super()", Blockly.Python.ORDER_ATOMIC];
+  }
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
