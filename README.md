@@ -10,3 +10,7 @@ CC0:
 CC-BY-3.0:
 
 - http://opengameart.org/content/cave-tileset-0
+
+NASA (uncopyrighted):
+
+- [pia19839-galecrater-main.png](http://www.nasa.gov/image-feature/jpl/pia19839/strata-at-base-of-mount-sharp)
