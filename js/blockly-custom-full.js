@@ -67160,9 +67160,10 @@ goog.require('Blockly.Python');
 
 Blockly.Python['variables_get'] = function(block) {
   // Variable getter.
-  var code = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'),
+  var fieldValue = block.getFieldValue('VAR');
+  var code = Blockly.Python.variableDB_.getName(fieldValue,
       Blockly.Variables.NAME_TYPE);
-  if (code === "super") {
+  if (fieldValue === "super") {
     // super is a special variable that resolves to super()
     return ["super()", Blockly.Python.ORDER_ATOMIC];
   }
