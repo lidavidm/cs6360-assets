@@ -6167,8 +6167,8 @@ Sk.abstr.sequenceContains = function (seq, ob) {
         return seq.sq$contains(ob);
     }
 
-    /** 
-     *  Look for special method and call it, we have to distinguish between built-ins and 
+    /**
+     *  Look for special method and call it, we have to distinguish between built-ins and
      *  python objects
      */
     special = Sk.abstr.lookupSpecial(seq, "__contains__");
@@ -6340,7 +6340,7 @@ Sk.abstr.sequenceUnpack = function (seq, n) {
     }
 
     for (it = Sk.abstr.iter(seq), i = it.tp$iternext();
-         (i !== undefined) && (res.length < n); 
+         (i !== undefined) && (res.length < n);
          i = it.tp$iternext()) {
         res.push(i);
     }
@@ -6490,7 +6490,7 @@ Sk.abstr.objectSetItem = function (o, key, v, canSuspend) {
 goog.exportSymbol("Sk.abstr.objectSetItem", Sk.abstr.objectSetItem);
 
 
-Sk.abstr.gattr = function (obj, nameJS, canSuspend) {
+Sk.abstr.gattr = function (obj, nameJS, canSuspend, overrideSelf) {
     var ret, f;
     var objname = Sk.abstr.typeName(obj);
 
@@ -6515,8 +6515,13 @@ Sk.abstr.gattr = function (obj, nameJS, canSuspend) {
 
             if (ret === undefined) {
                 f = obj.tp$getattr("__getattr__");
-
                 if (f !== undefined) {
+                    // Allow the caller to override the method's self
+                    // value
+                    if (f.im_self && overrideSelf) {
+                        f.im_self = overrideSelf;
+                    }
+
                     ret = Sk.misceval.callsimOrSuspend(f, new Sk.builtin.str(nameJS));
                 }
             }
@@ -6585,7 +6590,7 @@ Sk.abstr.iter = function(obj) {
 
     /**
      * Builds an iterator around classes that have a __getitem__ method.
-     * 
+     *
      * @constructor
      */
     var seqIter = function (obj) {
@@ -29474,10 +29479,12 @@ Compiler.prototype.vexpr = function (e, data, augvar, augsubs) {
                     this._checkSuspension(e);
                     return this._gr("lattr", "$ret");
                 case Load:
-                    out("$ret = Sk.abstr.gattr(", val, ",'", mangled, "', true);");
-                    // out("console.log('Attr access of " + val "');");
-                    out("console.log(self);");
-                    out("console.log('ATTR ACCESS');");
+                    out("$ret = Sk.abstr.gattr(", val, ",'", mangled, "', true, self);");
+                    // out("console.log('Attr access of " + mangled + "');");
+                    // out("console.log(self);");
+                    // out("console.log(self.$d);");
+                    // out("console.log($ret);");
+                    // out("console.log($ret.im_self);");
                     out("if (self && self.$d && $ret.im_self) { $ret.im_self = self; }");
                     this._checkSuspension(e);
                     return this._gr("lattr", "$ret");
