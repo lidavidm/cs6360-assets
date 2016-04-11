@@ -29479,13 +29479,18 @@ Compiler.prototype.vexpr = function (e, data, augvar, augsubs) {
                     this._checkSuspension(e);
                     return this._gr("lattr", "$ret");
                 case Load:
-                    out("$ret = Sk.abstr.gattr(", val, ",'", mangled, "', true, self);");
                     // out("console.log('Attr access of " + mangled + "');");
                     // out("console.log(self);");
                     // out("console.log(self.$d);");
                     // out("console.log($ret);");
                     // out("console.log($ret.im_self);");
-                    out("if (self && self.$d && $ret.im_self) { $ret.im_self = self; }");
+                    out("if (self && self.$d) { ");
+                    out("    $ret = Sk.abstr.gattr(", val, ",'", mangled, "', true, self);");
+                    out("    if ($ret.im_self) { $ret.im_self = self; }");
+                    out("}");
+                    out("else {");
+                    out("    $ret = Sk.abstr.gattr(", val, ",'", mangled, "', true);");
+                    out("}");
                     this._checkSuspension(e);
                     return this._gr("lattr", "$ret");
                 case AugStore:
