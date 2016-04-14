@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="16" tileheight="16">
- <tileset firstgid="1" name="cave2" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="cave2" tilewidth="16" tileheight="16" tilecount="368" columns="16">
   <image source="../tilesets/cave2.png" width="256" height="368"/>
   <tile id="176">
    <properties>
@@ -58,6 +58,46 @@
    </properties>
   </tile>
   <tile id="241">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="256">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="257">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="259">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="260">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="272">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="273">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="275">
+   <properties>
+    <property name="passable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="276">
    <properties>
     <property name="passable" value="false"/>
    </properties>
@@ -122,40 +162,33 @@
     <property name="passable" value="false"/>
    </properties>
   </tile>
-  <tile id="326">
-   <properties>
-    <property name="passable" value="false"/>
-   </properties>
-  </tile>
-  <tile id="328">
-   <properties>
-    <property name="passable" value="false"/>
-   </properties>
-  </tile>
-  <tile id="342">
-   <properties>
-    <property name="passable" value="false"/>
-   </properties>
-  </tile>
-  <tile id="343">
-   <properties>
-    <property name="passable" value="false"/>
-   </properties>
-  </tile>
-  <tile id="344">
-   <properties>
-    <property name="passable" value="false"/>
-   </properties>
-  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="10" height="10">
-  <data encoding="base64" compression="zlib">
-   eJx9j0EOwCAIBO2TRPGuYv//pGIyJJxKMmlcli70pxRzFgznOJN3c16nOrcGPUUf+O5b+P6VMRc+IUNhoUfGZp/wHDIt7RP5DWq6p6ecTX+mfoWGT5mZ6HGvkZ1L8cR+cctI/zNmBd8hdyddyLzaB/jzE2A=
-  </data>
+  <data encoding="csv">
+326,308,310,308,308,323,321,324,324,322,
+308,0,322,309,305,308,310,310,326,324,
+323,0,0,0,0,0,0,0,326,326,
+324,0,310,322,308,305,308,0,307,306,
+307,309,308,323,321,324,321,0,309,325,
+306,308,305,326,307,326,309,0,308,326,
+306,305,324,322,309,307,309,0,321,307,
+307,308,305,310,321,309,0,0,0,323,
+326,322,310,323,325,325,322,0,309,325,
+307,306,325,325,306,322,308,308,310,325
+</data>
  </layer>
  <layer name="Tile Layer 2" width="10" height="10">
-  <data encoding="base64" compression="zlib">
-   eJxt0OENgjAQhuEjYQR2USYQJ1DXYAPAFVgC/INMoE4gTAAb4AS+Ta7J0fTHkzTtl+8uHUTkiRFfTBEbXrhj1Xxo1IzzVpU5e58g94vMak3O7zRjCGbZPrvLor1zkHNdNUoz2/cuerdqv93JZg6JyBF5Ev8Ll2lw4r3AGSk67no8ZH++8HbFDRn+vRtFrw==
-  </data>
+  <data encoding="csv">
+177,178,179,209,210,210,210,210,210,241,
+193,132,226,178,178,178,178,178,179,193,
+193,194,194,129,194,194,194,194,195,193,
+193,194,242,210,210,210,241,149,195,193,
+209,210,211,177,178,179,193,194,195,193,
+178,178,178,225,242,211,193,194,195,209,
+130,114,194,242,211,177,225,194,226,179,
+210,210,210,211,177,225,194,194,194,226,
+178,178,178,178,225,261,260,194,276,261,
+260,277,260,260,277,261,277,194,261,261
+</data>
  </layer>
 </map>
