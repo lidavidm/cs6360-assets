@@ -14,3 +14,4 @@ CC-BY-3.0:
 NASA (uncopyrighted):
 
 - [pia19839-galecrater-main.png](http://www.nasa.gov/image-feature/jpl/pia19839/strata-at-base-of-mount-sharp)
+- [Earth](http://www.nasa.gov/image-feature/space-station-flyover-of-the-mediterranean)
