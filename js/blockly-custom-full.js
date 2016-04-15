@@ -33181,6 +33181,9 @@ Blockly.Warning.prototype.setVisible = function(visible) {
     // Bump the warning into the right location.
     var size = this.bubble_.getBubbleSize();
     this.bubble_.setBubbleSize(size.width, size.height);
+    Blockly.bindEvent_(this.bubble_.bubbleGroup_, 'mousedown', this, function() {
+      this.setVisible(false);
+    });
   } else {
     // Dispose of the bubble.
     this.bubble_.dispose();
