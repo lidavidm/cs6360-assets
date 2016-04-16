@@ -10,6 +10,8 @@ CC0:
 CC-BY-3.0:
 
 - http://opengameart.org/content/cave-tileset-0
+- http://opengameart.org/content/denzis-scifi-tilesets
+    - sprites/drone.png
 
 NASA (uncopyrighted):
 
