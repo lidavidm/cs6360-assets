@@ -12,6 +12,8 @@ CC-BY-3.0:
 - http://opengameart.org/content/cave-tileset-0
 - http://opengameart.org/content/denzis-scifi-tilesets
     - sprites/drone.png
+- http://opengameart.org/content/saturn-v-pixel-rocket
+    - sprites/rocket.png
 
 NASA (uncopyrighted):
 
