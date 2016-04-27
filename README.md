@@ -3,6 +3,8 @@
 CC0:
 
 - http://opengameart.org/content/robot-pack
+- http://opengameart.org/content/16x16-animated-campfire
+    - sprites/flame.png
 - http://kenney.nl/assets/roguelike-caves-dungeons
     - sprites/iron.png
     - tilesets/roguelikeDungeon_transparent.png
